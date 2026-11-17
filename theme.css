@@ -1,0 +1,159 @@
+/* Accessible dark theme and persistent appearance control. */
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #11121a;
+  --panel: #1b1d29;
+  --soft: #222433;
+  --primary: #b7a0ff;
+  --primary-deep: #e0d6ff;
+  --accent: #c4b5fd;
+  --highlight: #34304a;
+  --text: #f7f4ff;
+  --muted: #d3cede;
+  --line: rgba(224, 214, 255, 0.22);
+  --shadow: 0 22px 48px rgba(0, 0, 0, 0.38);
+  background: var(--bg);
+  color: var(--text);
+}
+
+body[data-theme="dark"] .site-header {
+  background: rgba(17, 18, 26, 0.94);
+  border-color: var(--line);
+}
+
+body[data-theme="dark"] .main-nav,
+body[data-theme="dark"] p,
+body[data-theme="dark"] .mini-stats span,
+body[data-theme="dark"] .donation-list,
+body[data-theme="dark"] .payment-details,
+body[data-theme="dark"] .small-note {
+  color: var(--muted);
+}
+
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .mini-stats li,
+body[data-theme="dark"] .impact-grid article,
+body[data-theme="dark"] .info-card,
+body[data-theme="dark"] #instagram-feed .instagram-card,
+body[data-theme="dark"] .editorial-feature,
+body[data-theme="dark"] .editorial-card,
+body[data-theme="dark"] .resource-list article,
+body[data-theme="dark"] .quote-card,
+body[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .donation-card,
+body[data-theme="dark"] .survey-form,
+body[data-theme="dark"] .crisis-notice,
+body[data-theme="dark"] .gallery-item {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+body[data-theme="dark"] .card-main,
+body[data-theme="dark"] .info-card {
+  background: linear-gradient(180deg, #242635, #1b1d29);
+}
+
+body[data-theme="dark"] .card-floating,
+body[data-theme="dark"] .contact-box,
+body[data-theme="dark"] .support-band-inner {
+  background: linear-gradient(135deg, #29243b, #202231);
+  border-color: var(--line);
+}
+
+body[data-theme="dark"] .editorial-section {
+  background: linear-gradient(180deg, #171923, #202231);
+}
+
+body[data-theme="dark"] .editorial-feature img,
+body[data-theme="dark"] .instagram-card img,
+body[data-theme="dark"] .gallery-item img {
+  background: #171923;
+}
+
+body[data-theme="dark"] .eyebrow,
+body[data-theme="dark"] .pill,
+body[data-theme="dark"] .instagram-badge {
+  background: #38314f;
+  color: #eee7ff;
+}
+
+body[data-theme="dark"] .dark-pill {
+  background: #d9ccff;
+  color: #211737;
+}
+
+body[data-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, #7658d6, #503592);
+  color: #fff;
+}
+
+body[data-theme="dark"] .btn-secondary {
+  background: #252737;
+  color: var(--text);
+  border-color: rgba(224, 214, 255, 0.3);
+}
+
+body[data-theme="dark"] .contact-form input,
+body[data-theme="dark"] .contact-form textarea,
+body[data-theme="dark"] .survey-form select,
+body[data-theme="dark"] .survey-form textarea {
+  background: #11121a;
+  color: var(--text);
+  border-color: rgba(224, 214, 255, 0.32);
+}
+
+body[data-theme="dark"] input::placeholder,
+body[data-theme="dark"] textarea::placeholder {
+  color: #b8b1c7;
+  opacity: 1;
+}
+
+body[data-theme="dark"] .crisis-notice {
+  border-left-color: #b7a0ff;
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: #f7f4ff;
+  color: #211737;
+  border-color: #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  z-index: 50;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  border: 2px solid #4c1d95;
+  border-radius: 999px;
+  background: #fff;
+  color: #24153f;
+  box-shadow: 0 8px 24px rgba(20, 15, 35, 0.28);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
